@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Aug 10, 2022 at 11:48 AM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+-- Host: 127.0.0.1
+-- Generation Time: Feb 06, 2025 at 11:44 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `barang` (
   `stok` text NOT NULL,
   `tgl_input` varchar(255) NOT NULL,
   `tgl_update` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `barang`
@@ -62,7 +62,7 @@ CREATE TABLE `kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(255) NOT NULL,
   `tgl_input` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `kategori`
@@ -86,14 +86,14 @@ CREATE TABLE `login` (
   `user` varchar(255) NOT NULL,
   `pass` char(32) NOT NULL,
   `id_member` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
-(1, 'admin', '202cb962ac59075b964b07152d234b70', 1);
+(1, 'admin', '55cbdf8bc4957432d278b1827a219ef3', 1);
 
 -- --------------------------------------------------------
 
@@ -109,14 +109,14 @@ CREATE TABLE `member` (
   `email` varchar(255) NOT NULL,
   `gambar` text NOT NULL,
   `NIK` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
-(1, 'Pramudita', 'Golden City', '089618173609', 'pramudita23@gmail.com', '19403.jpg', '12314121');
+(1, 'Wira Kusuma', 'Golden City', '089618173609', 'pramudita23@gmail.com', '19403.jpg', '12314121');
 
 -- --------------------------------------------------------
 
@@ -132,7 +132,7 @@ CREATE TABLE `nota` (
   `total` varchar(255) NOT NULL,
   `tanggal_input` varchar(255) NOT NULL,
   `periode` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -147,7 +147,7 @@ CREATE TABLE `penjualan` (
   `jumlah` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL,
   `tanggal_input` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -161,14 +161,14 @@ CREATE TABLE `toko` (
   `alamat_toko` text NOT NULL,
   `tlp` varchar(255) NOT NULL,
   `nama_pemilik` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `toko`
 --
 
 INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`) VALUES
-(1, 'Pram Martial Art', 'Golden City', '08138778718', 'Pramuditia');
+(1, 'Wira Mart', 'Golden City', '08138778718', 'Wira');
 
 --
 -- Indexes for dumped tables
